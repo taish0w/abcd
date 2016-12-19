@@ -1,0 +1,66 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        ABCD Quiz system
+      </a>
+    </div>
+  </div>
+</nav>
+<h1>Master Page</h1>
+<h1><%= @msg %></h1>
+<h1>Select your task</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 text-center"><a href="init">init</div>
+    <div class="col-sm-4 text-center"><a href="prev">prev</a></div>
+    <div class="col-sm-4 text-center"><a href="next">next</a></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 text-center"><a href="start">answer start</div>
+    <div class="col-sm-4 text-center"><a href="close">answer stop</a></div>
+    <div class="col-sm-4 text-center"><a href="nq">next quiz</a></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center"><a href="list">list</a></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center"><a href="master">reload</a></div>
+  </div>
+  <table id="example" class="display responsive no-wrap">
+    <thead>
+    <tr>
+      <th>
+        問題番号
+      </th>
+      <th>
+        回答番号
+      </th>
+      <th>
+        回答者
+      </th>
+      <th>
+        回答時間
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @userAns.each do |ans| %>
+  <tr>
+    <td><%= ans.question_no %></td>
+    <td><%= ans.ans_num %></td>
+    <td><%= ans.user %></td>
+    <td><%= ans.ans_sec %></td>
+  </tr>
+  <% end %>
+</tbody>
+  </table>
+</div>
+<script>
+$('#example').DataTable({
+  responsive: true,
+  "order": [[ 0, "desc" ]],
+  "paging":   false
+
+});
+</script>

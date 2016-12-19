@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        ABCD Quiz system
+      </a>
+    </div>
+  </div>
+</nav>
+<% if @no_ready.nil? then %>
+<h1>選んだ回答は <img src="/images/<%= @ansid %>.png"><%= @already %></h1>
+<% else %>
+<h1>回答受付前です</h1>
+<% end %>
+<h1><a href="../button">回答選択画面へ戻る</a></h1>

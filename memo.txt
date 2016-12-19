@@ -1,0 +1,8 @@
+rails g model user name:string username:string location:string about:text
+rails g model ans_seq ansnum:integer status:string ans_time:timestamp
+rails g model user_answer question_no:integer ans_sec:string ans_num:integer user:string ans_time:timestamp
+
+drop table schema_migrations;
+drop table ar_internal_metadata;
+drop table ans_seqs;
+drop table user_answers;
